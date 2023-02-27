@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Flaticon -->
+  <link rel="icon" type="image/x-icon" href="./Assests/chef_logo.png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+    integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+    integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CSS Style Sheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Owl Caraousel and Jquery Script -->
+  <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+    integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Title -->
+  <title>Chef's Place</title>
+
+</head>
+
+<body>
+  <!-- Header Section Starts -->
+  <header>
+    <!-- Nav Section Starts -->
+    <nav>
+      <div class="nav-first">
+        <figure>
+          <img class="cover logo" src="./Assests/chef_logo.png" alt="JTGeats Logo" />
+        </figure>
+      </div>
+      <div class="nav-second">
+        <ul>
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">About</a>
+          </li>
+          <li>
+            <a href="">Menu</a>
+          </li>
+          <li>
+            <a href="">Blog</a>
+          </li>
+          <li>
+            <a href="">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-third">
+        <ul>
+          <li>
+            <figure>
+              <img class="cover" src="./Assests/Search.svg" alt="Search Icon" />
+            </figure>
+          </li>
+          <!-- Modal Shows OnClick Cart Icon -->
+          <li onclick="showModal()">
+            <figure>
+              <img class="cover" src="./Assests/Cart.svg" alt="Cart Icon" />
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Nav Section Ends -->
+    <section>
+      <div id="header-div">
+        <div id="header-div-left">
+          <h1>Best Food For Your Taste</h1>
+          <h2>
+            Best cooks and best delivery guys are all at your service.
+          </h2>
+          <div id="header-searchBar">
+            <input id="searchInput" type="text" name="seachButton" placeholder="Search food you love" />
+            <button id="searchButton">Search</button>
+          </div>
+        </div>
+        <div id="header-div-right">
+          <figure>
+            <img class="cover" src="./Assests/chef.png" alt="Header Image" />
+          </figure>
+        </div>
+      </div>
+    </section>
+  </header>
+  <!-- Header Section Ends -->
+
+  <!-- Main Section Starts -->
+  <main>
+    <!-- Home Kitchen Section Starts -->
+    <section class="common-section">
+      <div id="card-section-heading">
+        <h3>Home Kitchen</h3>
+      </div>
+      <!-- Fetching Card Data from Index.js in card-section-main div-->
+      <div id="card-section-main"></div>
+    </section>
+    <!-- Home Kitchen Section Ends -->
+
+    <!-- Popular Items Section Starts -->
+    <section class="common-section">
+      <div id="popular-section-heading">
+        <h3>Popular Items</h3>
+      </div>
+      <div id="popular-section-cards">
+        <!-- Fetching Card Data from Index.js in owlCarouselCardItems div-->
+        <div class="owl-carousel owl-theme" id="owlCarouselCardItems"></div>
+      </div>
+      <div id="popular-section-button">
+        <!-- Model Shows OnClick popularSectionButton -->
+        <button id="popularSectionButton" onclick="showRequestDishModal()">
+          Request a Dish
+        </button>
+      </div>
+    </section>
+    <!-- Popular Items Section Ends -->
+
+    <!-- Video Section Starts -->
+    <section id="video-section">
+      <div id="foodVideo-section-heading">
+        <h3>Taste that best food its on time deliver with us.</h3>
+        <p>We serve the taste you love</p>
+        <p>Choose from a selection of our delicious chef recipes</p>
+      </div>
+      <div id="foodVideo-section-main">
+        <div id="foodVideo-section-first"></div>
+        <div id="foodVideo-section-second"></div>
+        <div id="foodVideo-section-third">
+          <video id="foodVideo" src="./Assests/Food Promo Video - Manual Mode Productions.mp4" width="877px"
+            height="442px" poster="./Assests/FoodImages/image3.png" onclick="playPause()"></video>
+          <div id="foodVideo-section-playButton" onclick="playPause()">
+            <button id="foodVideoBtn">
+              <figure>
+                <img class="cover" src="./Assests/play.svg" alt="Play Button" />
+              </figure>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Video Section Ends -->
+
+
+    <!-- Contact Us Section Starts -->
+    <section class="common-section">
+      <div id="contactUs-section">
+        <div id="contactUs-left-section">
+          <div id="contactUs-left-heading">
+            <h5>Do you have a question</h5>
+            <p>
+              Fill this form and our manager will contact you in next 48
+              hours.
+            </p>
+          </div>
+          <div id="contactUs-left-formWrapper">
+            <form action="" method="post">
+              <div class="inputWrapper">
+                <input type="text" name="name" id="formNameInput" placeholder="Your Name" />
+                <input type="email" name="email" id="formEmailInput" placeholder="Your E-mail" />
+              </div>
+              <input type="text" name="message" id="formMessageInput" placeholder="Your Message" />
+              <button id="formSubmitButton" disabled>Submit</button>
+            </form>
+          </div>
+        </div>
+        <div id="contactUs-right-section">
+          <figure>
+            <img class="cover" src="./Assests/Food delivery illustration.svg" alt="Food Delivery Image" />
+          </figure>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Us Section Ends -->
+  </main>
+  <!-- Main Section Ends -->
+
+  <!-- Footer Section Starts -->
+  <footer>
+    <nav>
+      <div class="nav-first">
+        <figure>
+          <img class="cover logo" src="./Assests/chef_logo.png" alt="JTGeats Logo" />
+        </figure>
+      </div>
+      <div class="nav-second">
+        <ul>
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">About</a>
+          </li>
+          <li>
+            <a href="">Menu</a>
+          </li>
+          <li>
+            <a href="">Blog</a>
+          </li>
+          <li>
+            <a href="">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-third">
+        <ul>
+          <li>
+            <a href="">
+              <figure>
+                <img class="cover" src="./Assests/Facebook.svg" alt="Search Icon" />
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <figure>
+                <img class="cover" src="./Assests/instagram.svg" alt="Cart Icon" />
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="footer-line"></div>
+  </footer>
+  <!-- Footer Section Ends -->
+
+  <!-- Modals Starts -->
+
+  <!-- Cart Modal Starts -->
+  <div id="cartModal" class="modal">
+    <div class="modalcontent">
+      <div id="cartModalContent">
+        <div id="cartModalImage">
+          <figure>
+            <img class="cover" src="./Assests/cart(Model).png" alt="Add To cart" />
+          </figure>
+        </div>
+        <div id="cartModalHeadings">
+          <h4>Cart is Empty</h4>
+          <p>Add some items to the cart to checkout</p>
+        </div>
+        <div id="cartModalButton">
+          <button id="backToMenuButton" onclick="hideModal()">
+            Back to Menu
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Cart Modal Ends -->
+
+  <!-- Request Dish Modal Starts -->
+  <div id="requestDishModal" class="modal">
+    <div class="modalcontent">
+      <div id="requestDishModalContent">
+        <div id="requestDishModalHeadings">
+          <h4>Request a Dish</h4>
+        </div>
+        <div id="requestDishModalInputs">
+          <form action="" method="post">
+            <label for="name">Name</label>
+            <input type="text" name="" id="" placeholder="Enter name of the dish" />
+            <label for="name">Upload an Image</label>
+            <input type="text" name="" id="" placeholder="Paste a URL" />
+          </form>
+        </div>
+
+        <div id="requestDishModalButtons">
+          <button id="requestDishCancelButton" onclick="hideRequestDishModal()">
+            Cancel
+          </button>
+          <button id="requestDishSubmitButton" onclick="hideRequestDishModal()">
+            Submit Request
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Request Dish Modal Ends -->
+
+  <!-- Modal Section Ends -->
+
+  <!-- Js Script -->
+  <script src="index.js"></script>
+</body>
+
+</html>
